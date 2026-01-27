@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "474575612648",
+    "project_id": "hamiimobiles-b8a3e",
+    "storage_bucket": "hamiimobiles-b8a3e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474575612648:android:0b96070ba73e962518375d",
+        "android_client_info": {
+          "package_name": "com.example.hamii"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrs_OfoVU1_kwdPbAkh4Zeo2FaMNcFdfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,61 @@
+name: hamii
+description: Enterprise Resource Planning for Hamii Mobiles
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- State Management & Utils ---
+  provider: ^6.0.0
+  intl: ^0.18.0
+  uuid: ^4.0.0
+
+  # --- Database (Offline) ---
+  isar: ^3.1.0+1
+  isar_flutter_libs: ^3.1.0+1
+  path_provider: ^2.1.2
+  share_plus: ^10.0.0    # ADD THIS for the share/save menu
+  # --- Cloud & Auth (Online) - UPDATED VERSIONS ---
+  firebase_core: ^3.1.0
+  firebase_auth: ^5.1.0
+  cloud_firestore: ^5.0.0
+  connectivity_plus: ^6.0.0
+
+  # --- Hardware (Printer & PDF) ---
+  mobile_scanner: ^5.2.3
+  pdf: ^3.10.4
+  printing: ^5.11.0
+
+
+  # --- UI ---
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+  # --- Generators ---
+  build_runner: ^2.4.6
+  isar_generator: ^3.1.0+1
+  flutter_launcher_icons: ^0.13.1
+
+# --- APP ICON CONFIG ---
+flutter_launcher_icons:
+  image_path: "assets/icon.png" # Your logo file
+  android: "ic_launcher"
+  ios: true
+  windows: # This was missing!
+    generate: true
+    icon_size: 256
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
