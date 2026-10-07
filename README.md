@@ -21,17 +21,7 @@ Retail mobile shops and hardware repair labs face constant operational bottlenec
 
 ---
 
-## 📸 Interface Preview
 
-| Dashboard & Financials | Inventory & IMEI Tracking | Service & Repair Tickets |
-| :---: | :---: | :---: |
-| <img src="assets/screenshots/dashboard.png" width="240" alt="Dashboard Screen" /> | <img src="assets/screenshots/inventory.png" width="240" alt="Inventory Screen" /> | <img src="assets/screenshots/repairs.png" width="240" alt="Repairs Screen" /> |
-
-| Customer & Vendor Khata | Printable Job Slip | Point of Sale (POS) |
-| :---: | :---: | :---: |
-| <img src="assets/screenshots/ledgers.png" width="240" alt="Ledger Accounts Screen" /> | <img src="assets/screenshots/intake_slip.png" width="240" alt="Repair Slip Modal" /> | <img src="assets/screenshots/pos.png" width="240" alt="POS Screen" /> |
-
----
 
 ## ✨ Features & Modules
 
@@ -77,3 +67,105 @@ lib/
 │   └── sales/                 # Cash counter, POS receipts, discount management
 ├── app.dart                   # Root MaterialApp and routing setup
 └── main.dart                  # Dependency injection and entry point
+
+## 🛠️ Tech Stack
+
+* **UI Framework:** Flutter (Dart 3+)
+* **State Management:** Provider / BLoC
+* **Local Database:** Isar Database (Embedded NoSQL)
+* **Backend & Cloud Sync:** Firebase Authentication, Cloud Firestore, Firebase Storage
+* **Receipt & Document Generation:** `pdf`, `printing`
+* **Barcode & Hardware Access:** `mobile_scanner`, `image_picker`
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure your development environment meets these requirements:
+
+* [Flutter SDK](https://docs.flutter.dev/get-started/install) (`v3.19.0` or higher)
+* [Dart SDK](https://dart.dev/get-dart)
+* Android Studio / VS Code with Flutter extension
+* [Firebase CLI](https://firebase.google.com/docs/cli) installed and authenticated
+
+### Setup Instructions
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/your-username/hami-mobiles-erp.git](https://github.com/your-username/hami-mobiles-erp.git)
+   cd hami-mobiles-erp
+   ```
+
+2. **Install project dependencies:**
+   ```bash
+   flutter pub get
+   ```
+
+3. **Configure Firebase:**  
+   Run the FlutterFire configuration tool to generate platform-specific credentials:
+   ```bash
+   dart pub global activate flutterfire_cli
+   flutterfire configure
+   ```
+
+4. **Run Code Generation:**  
+   Generate database schemas and model adapters:
+   ```bash
+   dart run build_runner build --delete-conflicting-outputs
+   ```
+
+5. **Launch the application:**
+   ```bash
+   flutter run
+   ```
+
+---
+
+## 🔒 Configuration & Best Practices
+
+* Add `google-services.json` and `GoogleService-Info.plist` to your `.gitignore` to protect production API keys.
+* Enforce Firestore Security Rules so only authenticated shop accounts can access ledger and inventory data:
+
+```javascript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions and feature suggestions are welcome!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/NewFeature`)
+3. Commit your Changes (`git commit -m 'feat: Add NewFeature'`)
+4. Push to the Branch (`git push origin feature/NewFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for details.
+
+---
+
+## 👨‍💻 Author
+
+**Zain Rajput**
+
+* **GitHub:** [@zainrajput765](https://github.com/zainrajput765)
+* **LinkedIn:** [Zain Rajput](https://www.linkedin.com/in/zain-rajput765/)
+
+
+
+
